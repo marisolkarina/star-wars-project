@@ -1,0 +1,79 @@
+<form [formGroup]="myForm" (ngSubmit)="verRuleta()" *ngIf="showForm">
+    <h2>Realiza el pago de tu carta</h2>
+
+    <mat-form-field appearance="fill" class="col-4 px-2">
+        <mat-label>Nombre de la tarjeta</mat-label>
+        <input 
+            matInput 
+            placeholder="nombre"
+            [formControl] = controlName
+            type = "text"
+        >
+        <mat-error *ngIf="controlName.hasError('required')">
+            Ingrese el nombre
+        </mat-error>
+
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="col-4 px-2">
+        <mat-label>Número de la tarjeta</mat-label>
+        <input 
+            matInput 
+            placeholder="numero"
+            [formControl] = controlNumero
+            type = "number"
+            
+        >
+        <mat-error *ngIf="controlNumero.hasError('required')">
+            Ingrese el número
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="col-4 px-2">
+        <mat-label>Mes de vencimiento</mat-label>
+        <mat-select [formControl]="controlMes" required>
+          <mat-option *ngFor="let mes of meses" [value]="mes">
+            {{mes.month}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="controlMes.hasError('required')">
+            Selecciona el mes
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="col-4 px-2">
+        <mat-label>Año de vencimiento</mat-label>
+        <mat-select [formControl]="controlAnio" required>
+            <mat-option *ngFor="let anio of anios" [value]="anio">
+                {{anio.year}}
+            </mat-option>
+        </mat-select>
+        <mat-error *ngIf="controlAnio.hasError('required')">
+            Seleccione un año
+        </mat-error>
+    </mat-form-field>
+    
+    <mat-form-field appearance="fill" class="col-4 px-2">
+        <mat-label>CVV</mat-label>
+        <input 
+            matInput 
+            placeholder="cvv"
+            [formControl] = controlCvv
+            type = "number"
+        >
+        <mat-error *ngIf="controlNumero.hasError('required')">
+            Ingrese el número
+        </mat-error>
+    </mat-form-field>
+
+    <button mat-flat-button color="primary" type="submit" class="col-4 px-2">
+        Confirmar pago
+    </button>
+
+</form>
+
+<div *ngIf="!showForm">
+    <h2>¡Obtén tu carta!</h2>
+    <router-outlet></router-outlet>
+</div>
+
