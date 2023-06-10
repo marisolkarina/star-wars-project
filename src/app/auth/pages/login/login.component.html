@@ -1,1 +1,13 @@
-<p>login works!</p>
+<h2 class="text-center mt-3">Login de usuario</h2>
+<form [formGroup]="formLogin" (ngSubmit)="onSubmit()" class="m-5">
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="text" class="form-control" formControlName="email">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" formControlName="password">
+    </div>
+    <button mat-flat-button color="primary" type="submit">Iniciar sesión</button>
+</form>
+<!-- <button class="btn btn-info" (click)="onClick()">Login With Google</button> -->

@@ -6,5 +6,5 @@ export const environment = {
     apiKey: 'AIzaSyC496LEE7DyAm9DkrSZJeRVGNVBn4gxrkM',
     authDomain: 'star-wars-d184a.firebaseapp.com',
     messagingSenderId: '683323153807',
-  },
+  }
 };

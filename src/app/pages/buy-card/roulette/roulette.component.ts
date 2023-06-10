@@ -34,7 +34,7 @@ export class RouletteComponent {
     {
       id: 1,
       name: 'Yoda',
-      url: '../../../assets/image/Yoda.jpeg'
+      url: '../../../assets/image/Yoda.jpeg',
     },
     {
       id: 2,
