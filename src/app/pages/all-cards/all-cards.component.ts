@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import CardsUniverse from './interfaces/cards-universe';
+import { AllCardsService } from './services/all-cards.service';
 
 @Component({
   selector: 'app-all-cards',
@@ -7,4 +9,16 @@ import { Component } from '@angular/core';
 })
 export class AllCardsComponent {
 
+  allCards!: CardsUniverse[];
+
+  constructor(
+    private allCardsService: AllCardsService
+  ) {}
+
+  ngOnInit(): void {
+    this.allCardsService.getCards().subscribe(cardsUniverse => {
+      console.log(cardsUniverse);
+      this.allCards = cardsUniverse;
+    })
+  }
 }

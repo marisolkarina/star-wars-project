@@ -1,24 +1,15 @@
 <div class="container">
   <div class="row">
-    <div class="card" style="width: 18rem;" *ngFor="let card of cards" class="border rounded mx-2 px-3">
-        <img src={{card.url}} height="250px" class="card-img-top my-3" alt="imagen de carta">
+    <div class="card" style="width: 18rem;" *ngFor="let card of cards" class="border rounded mx-2 px-3" 
+    style="display: flex;width: 18rem;flex-direction: column;align-items: center;">
+        <img src={{card.url}} class="card-img-top my-3" alt="imagen de carta">
         <div class="card-body">
-          <h3 class="fw-semibold">{{card.name}}</h3>
-          <!-- <h5>NFT: {{card.id}}</h5> -->
+          <h2 class="fw-semibold">{{card.name}}</h2>
+          <h3 class="fw-semibold">Tipo de personaje: {{card.tipo}}</h3>
+          
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary mb-3">Ver detalle</a>
+          <a href="" class="btn btn-primary mb-3 w-100">Ver detalle</a>
         </div>
       </div>
   </div>
 </div>
-     
-
-<!-- <mat-grid-list cols="3">
-  <mat-grid-tile
-      *ngFor="let carta of cartas"
-      [colspan]="card.cols"
-      [rowspan]="card.rows"
-      [style.background]="tile.color">
-    {{carta.text}}
-  </mat-grid-tile>
-</mat-grid-list> -->

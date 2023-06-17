@@ -11,6 +11,14 @@ import { BuyCardComponent } from '../pages/buy-card/buy-card.component';
 import { MyCardsComponent } from '../pages/my-cards/my-cards.component';
 import { DashboardComponent } from './dashboard.component';
 import { RouletteComponent } from '../pages/buy-card/roulette/roulette.component';
+import { RouletteAlienigenaComponent } from '../pages/buy-card/roulette/other-roulette/roulette-alienigena/roulette-alienigena.component';
+import { RouletteSenadorComponent } from '../pages/buy-card/roulette/other-roulette/roulette-senador/roulette-senador.component';
+import { RouletteAndroideComponent } from '../pages/buy-card/roulette/other-roulette/roulette-androide/roulette-androide.component';
+import { RouletteContrabandistaComponent } from '../pages/buy-card/roulette/other-roulette/roulette-contrabandista/roulette-contrabandista.component';
+import { RouletteImperialComponent } from '../pages/buy-card/roulette/other-roulette/roulette-imperial/roulette-imperial.component';
+import { RouletteRebeldeComponent } from '../pages/buy-card/roulette/other-roulette/roulette-rebelde/roulette-rebelde.component';
+import { RouletteSithComponent } from '../pages/buy-card/roulette/other-roulette/roulette-sith/roulette-sith.component';
+import { RouletteJediComponent } from '../pages/buy-card/roulette/other-roulette/roulette-jedi/roulette-jedi.component';
 
 
 @NgModule({
@@ -36,7 +44,41 @@ import { RouletteComponent } from '../pages/buy-card/roulette/roulette.component
         children: [
           {
             path: 'roulette',
-            component: RouletteComponent
+            component: RouletteComponent,
+            children: [
+              {
+                path: 'alienigenas',
+                component: RouletteAlienigenaComponent
+              },
+              {
+                path: 'senadores',
+                component: RouletteSenadorComponent
+              },
+              {
+                path: 'androides',
+                component: RouletteAndroideComponent
+              },
+              {
+                path: 'contrabandistas',
+                component: RouletteContrabandistaComponent
+              },
+              {
+                path: 'imperiales',
+                component: RouletteImperialComponent
+              },
+              {
+                path: 'rebeldes',
+                component: RouletteRebeldeComponent
+              },
+              {
+                path: 'sith',
+                component: RouletteSithComponent
+              },
+              {
+                path: 'jedi',
+                component: RouletteJediComponent
+              }
+            ]
           }
         ]
       },
