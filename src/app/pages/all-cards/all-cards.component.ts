@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import CardsUniverse from './interfaces/cards-universe';
 import { AllCardsService } from './services/all-cards.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-all-cards',
@@ -11,8 +12,11 @@ export class AllCardsComponent {
 
   allCards!: CardsUniverse[];
 
+
   constructor(
-    private allCardsService: AllCardsService
+    private allCardsService: AllCardsService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
   ) {}
 
   ngOnInit(): void {
@@ -21,4 +25,12 @@ export class AllCardsComponent {
       this.allCards = cardsUniverse;
     })
   }
+
+  verDetalle(cartaId:number): void {
+    this.router.navigate([cartaId], {
+      relativeTo: this.activatedRoute,
+    });
+    console.log('link');
+  }
+
 }

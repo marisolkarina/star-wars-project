@@ -19,6 +19,7 @@ import { RouletteImperialComponent } from '../pages/buy-card/roulette/other-roul
 import { RouletteRebeldeComponent } from '../pages/buy-card/roulette/other-roulette/roulette-rebelde/roulette-rebelde.component';
 import { RouletteSithComponent } from '../pages/buy-card/roulette/other-roulette/roulette-sith/roulette-sith.component';
 import { RouletteJediComponent } from '../pages/buy-card/roulette/other-roulette/roulette-jedi/roulette-jedi.component';
+import { CardsDetalleComponent } from '../pages/all-cards/cards-detalle/cards-detalle.component';
 
 
 @NgModule({
@@ -36,7 +37,17 @@ import { RouletteJediComponent } from '../pages/buy-card/roulette/other-roulette
     RouterModule.forChild([
       {
         path: 'all-cards',
-        component: AllCardsComponent
+        component: AllCardsComponent,
+        children: [
+          {
+            path:'',
+            component: AllCardsComponent
+          },
+          {
+            path: ':ident',
+            component: CardsDetalleComponent
+          }
+        ]
       },
       {
         path: 'buy-card',

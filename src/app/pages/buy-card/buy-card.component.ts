@@ -85,4 +85,8 @@ export class BuyCardComponent {
     
   }
 
+  confirmacionPago():void {
+    alert('Pago exitoso!')
+  }
+
 }

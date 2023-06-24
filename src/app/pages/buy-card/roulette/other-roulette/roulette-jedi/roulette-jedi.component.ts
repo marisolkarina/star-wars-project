@@ -84,7 +84,7 @@ export class RouletteJediComponent {
   premio(premios:string, url: string) {
     Swal.fire({
       icon: 'success',
-      title: `Carta ganada: ${premios}`,
+      title: `Carta ganada: ${premios}. Revisa la sección "Mis cartas".`,
       imageUrl: `${url}`,
       imageHeight: 300,
       imageAlt: 'Carta'

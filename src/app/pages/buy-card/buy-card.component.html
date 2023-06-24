@@ -1,5 +1,6 @@
 <form [formGroup]="myForm" (ngSubmit)="verRuleta()" *ngIf="showForm">
-    <h2>Realiza el pago de tu carta</h2>
+    <h2>Primero realiza el pago para luego girar la ruleta y ganar.</h2>
+    <p>Rellena los datos de tu tarjeta</p>
 
     <mat-form-field appearance="fill" class="col-4 px-2">
         <mat-label>Nombre de la tarjeta</mat-label>
@@ -66,7 +67,7 @@
         </mat-error>
     </mat-form-field>
 
-    <button mat-flat-button color="primary" type="submit" class="col-4 px-2">
+    <button mat-flat-button color="primary" type="submit" class="col-4 px-2" (click)="confirmacionPago()">
         Confirmar pago
     </button>
 

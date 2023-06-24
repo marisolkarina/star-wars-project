@@ -1,5 +1,6 @@
 <h1>Universo de cartas</h1>
-<h2>ALIENÍGENAS</h2>
+<!-- <h2>ALIENÍGENAS</h2> -->
+<h2>Conoce las características de todos los personajes del universo de Star Wars para saber qué podrías ganar.</h2>
 
 <div class="container">
     <div class="row">
@@ -14,7 +15,8 @@
             <h3 class="fw-semibold">Tipo de personaje: {{card.tipo}}</h3>
             
             <p class="card-text">{{card.descripcion}}</p>
-            <a href="" class="btn btn-primary mb-3 w-100">Ver detalle</a>
+            <button class="btn btn-primary mb-3 w-100" (click)="verDetalle(card.ident)">Ver detalle</button>
+            
           </div>
         </div>
     </div>
